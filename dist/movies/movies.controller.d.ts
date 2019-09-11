@@ -1,5 +1,5 @@
-import { MoviesService } from './movies.service';
-import { ConfigService } from '../config/config.service';
+import { MoviesService } from "./movies.service";
+import { ConfigService } from "../config/config.service";
 export declare class MoviesController {
     private moviesService;
     private apiKey;

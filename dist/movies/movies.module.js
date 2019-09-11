@@ -15,7 +15,7 @@ let MoviesModule = class MoviesModule {
 MoviesModule = __decorate([
     common_1.Module({
         controllers: [movies_controller_1.MoviesController],
-        providers: [movies_service_1.MoviesService, config_service_1.ConfigService],
+        providers: [movies_service_1.MoviesService, config_service_1.ConfigService]
     })
 ], MoviesModule);
 exports.MoviesModule = MoviesModule;

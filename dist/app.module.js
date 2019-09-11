@@ -14,7 +14,7 @@ let AppModule = class AppModule {
 };
 AppModule = __decorate([
     common_1.Module({
-        imports: [tasks_module_1.TasksModule, config_module_1.ConfigModule, movies_module_1.MoviesModule],
+        imports: [tasks_module_1.TasksModule, config_module_1.ConfigModule, movies_module_1.MoviesModule]
     })
 ], AppModule);
 exports.AppModule = AppModule;

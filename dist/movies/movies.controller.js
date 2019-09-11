@@ -15,7 +15,7 @@ const config_service_1 = require("../config/config.service");
 let MoviesController = class MoviesController {
     constructor(moviesService, config) {
         this.moviesService = moviesService;
-        this.apiKey = config.get('API_TOKEN');
+        this.apiKey = config.get("API_TOKEN");
         console.log("config ====>", this.apiKey);
     }
     async getAllMovies() {
@@ -29,7 +29,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], MoviesController.prototype, "getAllMovies", null);
 MoviesController = __decorate([
-    common_1.Controller('movies'),
+    common_1.Controller("movies"),
     __metadata("design:paramtypes", [movies_service_1.MoviesService, config_service_1.ConfigService])
 ], MoviesController);
 exports.MoviesController = MoviesController;
