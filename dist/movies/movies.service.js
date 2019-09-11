@@ -7,15 +7,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
-const tasks_module_1 = require("./tasks/tasks.module");
-const config_module_1 = require("./config/config.module");
-const movies_module_1 = require("./movies/movies.module");
-let AppModule = class AppModule {
+const axios_1 = require("axios");
+let MoviesService = class MoviesService {
+    async getAllMovies(apiKey) {
+        const { data, status } = await axios_1.default.get(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`);
+        if (+status === 200) {
+            return data.results;
+        }
+        throw new common_1.HttpException('Error', status);
+    }
 };
-AppModule = __decorate([
-    common_1.Module({
-        imports: [tasks_module_1.TasksModule, config_module_1.ConfigModule, movies_module_1.MoviesModule],
-    })
-], AppModule);
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+MoviesService = __decorate([
+    common_1.Injectable()
+], MoviesService);
+exports.MoviesService = MoviesService;
+//# sourceMappingURL=movies.service.js.map
