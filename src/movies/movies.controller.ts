@@ -1,12 +1,13 @@
-import { Controller, Get, Req } from '@nestjs/common';
-import { MoviesService } from './movies.service';
-import { ConfigService } from '../config/config.service';
+import { Controller, Get, Req } from "@nestjs/common";
+import { MoviesService } from "./movies.service";
+// import { ConfigService } from '../config/config.service';
 
-@Controller('movies')
+@Controller("movies")
 export class MoviesController {
   private apiKey: string;
-  constructor(private moviesService: MoviesService, config: ConfigService) {
-    this.apiKey = config.get('API_TOKEN');
+  constructor(private moviesService: MoviesService) {
+    // this.apiKey = config.get('API_TOKEN');
+    this.apiKey = process.env.API_TOKEN;
     console.log("config ====>", this.apiKey);
   }
 

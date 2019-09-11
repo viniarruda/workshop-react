@@ -6,7 +6,7 @@ export class ConfigService {
 
   constructor() {
     // this.envConfig = dotenv.parse(fs.readFileSync('.env'));
-    this.envConfig = dotenv.parse(fs.readFileSync(process.env.NODE_ENV));
+    this.envConfig = dotenv.parse(fs.readFileSync(".env"));
   }
 
   get(key: string): string {
