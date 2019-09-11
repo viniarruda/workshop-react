@@ -1,11 +1,12 @@
-import * as dotenv from 'dotenv';
-import * as fs from 'fs';
+import * as dotenv from "dotenv";
+import * as fs from "fs";
 
 export class ConfigService {
   private readonly envConfig: { [key: string]: string };
 
   constructor() {
-    this.envConfig = dotenv.parse(fs.readFileSync('.env'));
+    // this.envConfig = dotenv.parse(fs.readFileSync('.env'));
+    this.envConfig = dotenv.parse(fs.readFileSync(process.env.NODE_ENV));
   }
 
   get(key: string): string {
