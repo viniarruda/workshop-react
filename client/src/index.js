@@ -1,14 +1,24 @@
-import React from 'react';
-import {
-    render
-} from 'react-dom'
-import Root from './routes'
+import React from "react";
+import ReactDOM from "react-dom";
 
-import registerServiceWorker from './registerServiceWorker'
+import Step01 from "./step01/step01";
+import Step03 from "./step03/step03";
+import Step04 from "./step04/step04";
 
+import "./styles.css";
 
-render( <
-    Root /> ,
-    document.getElementById('root')
-);
-registerServiceWorker();
+function App() {
+  return (
+    <div className="App">
+      <h1>Exercicio 1 - Componentização</h1>
+      <Step01 />
+      <h1>Exercício 3 - UseState Hooks</h1>
+      <Step03 />
+      <h1>Exercício 4 - UseEffect Hooks</h1>
+      <Step04 />
+    </div>
+  );
+}
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
